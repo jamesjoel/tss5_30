@@ -47,6 +47,29 @@ body{
     /* background-color: green; */
 
 }
+.bottom-header ul{
+    margin: 0;
+    padding: 0;
+}
+.bottom-header ul li{
+    float: left;
+    list-style-type: none;
+}
+.bottom-header ul li a{
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    padding: 11px 25px;
+    transition: 1s;
+}
+.bottom-header ul li a:hover{
+    background-color: #000;
+}
+
+
+
+
+
 .left-slider{
     width: 30%;
     height: 100%;
@@ -128,4 +151,23 @@ body{
 }
 .product-info a:hover{
     background-color: #000;
+}
+.top-header-left{
+    /* background-color: red; */
+    height: 40px;
+    width: 300px;
+    float: left;
+}
+.top-header-left p{
+    padding: 0 10px;
+}
+.top-header-right{
+    height: 40px;
+    width: 300px;
+    /* background-color: blue; */
+    float: right;
+}
+.top-header-right p{
+    text-align: right;
+    padding: 0px 10px;
 }
