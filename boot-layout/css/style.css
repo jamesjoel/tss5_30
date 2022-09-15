@@ -1,6 +1,13 @@
 .bg-orange{
     background-color: #FF5733;
 }
+.text-orange{
+    color: #FF5733;
+}
+.btn-orange{
+    background-color: #FF5733;
+    color: #fff;
+}
 .bg-black{
     background-color: #000;
 }
@@ -8,5 +15,35 @@
     background-color: #FF5733;
 }
 .slider{
-    background-image: ;
+    background-image: url("../images/slider-bg.jpg");
+    height: 400px;
+    width: 100%;
+}
+.slider h2{
+    padding-top: 80px;
+}
+.slider h1 span{
+    color: #FF5733;
+}
+.services .col-md-4{
+    transition: 1s;
+}
+.services .col-md-4:hover{
+    box-shadow: 0 0 15px #000;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.product .category h4{
+    border-radius: 10px 10px 0 0;
+}
+.product .category{
+    border : 1px solid #FF5733;
+    border-radius: 10px 10px 0 0;
+}
+.product .category .nav .nav-item .nav-link:hover{
+    background-color: #FF5733;
+    color: #fff !important;
+}
+.product .card .card-img-top{
+    height: 150px;
 }
