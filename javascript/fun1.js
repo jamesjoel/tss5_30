@@ -1,5 +1,4 @@
-function myFun()
-{
+var myFun = () =>{
 
     var a = 10;
     var b = 5;
