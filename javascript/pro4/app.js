@@ -6,6 +6,7 @@ app.use(express.static(__dirname+"/assets"));
 
 
 app.get("/", (req, res)=>{   
+    var name="aman";
     res.sendFile(__dirname+"/index.html");
 })
 app.get("/about", (req, res)=>{
