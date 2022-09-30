@@ -26,15 +26,6 @@ app.get("/quote", (request, response)=>{
     response.render("get-a-quote.ejs");
 })
 app.get("/services", (request, response)=>{
-    var name = "Aliasger";
-    var city = "Indore";
-    var  age = 18;
-
-    var user = {
-        a: name,
-        b: city,
-        c: age
-    };
     response.render("services.ejs", user);
 })
 app.get("/service-details", (request, response)=>{
