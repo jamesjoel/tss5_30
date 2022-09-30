@@ -1,0 +1,24 @@
+#navbar .navbar-nav .nav-item .nav-link:hover{
+    background-color: rgb(118, 195, 247);
+}
+#dropdown .dropdown-item:hover{
+    background-color: rgb(118, 195, 247);
+}
+.slider{
+    background-image: url(/IMG/2.webp);
+    /* width: 100%; */
+    height: 500px;
+}
+.bg-black{
+    background-color: #000;
+    height: min-500px;
+}
+#navbar .navbar-nav .nav-item .nav-link{
+    transition: 1s;
+    border-radius: 10px;
+}  
+.bg-light{
+    background-color: rgb(102, 102, 102);
+    border-radius: 5px;
+    color: aqua;
+}
