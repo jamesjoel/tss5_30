@@ -32,8 +32,8 @@ app.post("/save", (req, res)=>{
 
   MongoClient.connect("mongodb://localhost:27017", (err, con)=>{
     var db = con.db("tss_new");
-    db.collection("student").insertOne(req.body);
-    res.redirect("/student");
+    db.collection("students").insertOne(req.body);
+    res.redirect("/students");
   });
 
 })
