@@ -27,7 +27,7 @@ app.get("/students",(req,res)=>{
 })
 app.post("/save",(req,res)=>{
     MongoClient.connect("mongodb://localhost:27017",(err,con)=>{
-        var db = con.db("tss_new");
+        var db = con.db("tss_pooja");
         db.collection("students").insertOne(req.body);
         res.redirect("students")
         parseInt()
