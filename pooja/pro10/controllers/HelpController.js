@@ -10,5 +10,7 @@ routes.get("/demo2",(req,res)=>{
 })
 
 routes.get("/demo3",(req,res)=>{
-    
+
 })
+
+module.exports = routes;
