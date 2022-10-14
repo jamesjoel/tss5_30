@@ -1,0 +1,31 @@
+<%- include('../includes/header') %>
+
+<div class="container" style="min-height: 700px; margin-top: 80px;">
+    <div class="row">
+        <div class="col-md-10 offset-md-1 mt-4">
+            <h4 class="text-center">List of All Student</h4>
+            <table class="table table-dark table-striped table-hover table-bordered">
+                <tr>
+                    <th>S.No.</th>
+                    <th>Full Name</th>
+                    <th>Fee</th>
+                    <th>City</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <% result.forEach((x, n)=>{ %>
+                    <tr>
+                        <td><%= n+1 %></td>
+                        <td><%= x.fullname %></td>
+                        <td><%= x.fee %></td>
+                        <td><%= x.city %></td>
+                        <td><a href="#" class="btn btn-sm btn-info">Edit</a></td>
+                        <td><a href="#" class="btn btn-sm btn-danger">Delete</a></td>
+                    </tr>
+                <% }) %>
+            </table>
+        </div>
+    </div>
+
+</div>
+<%- include('../includes/footer') %>
