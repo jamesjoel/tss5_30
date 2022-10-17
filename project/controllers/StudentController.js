@@ -19,5 +19,14 @@ routes.get("/list", (req, res)=>{
         res.render("pages/student-list", pagedata);
     });
 })
+routes.get("/detail/:a", (req, res)=>{
+    // console.log(req.params.a);
+    var id = req.params.a;
+    Student.find({ _id : id }, (err, result)=>{
+        var pagedata = { result : result[0] };
+        // console.log(result);
+        res.render("pages/student-detail", pagedata);
+    })
+})
 
 module.exports = routes;
