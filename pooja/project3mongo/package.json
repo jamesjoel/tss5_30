@@ -1,8 +1,8 @@
 {
-  "name": "pooja",
+  "name": "project3mongo",
   "version": "1.0.0",
-  "description": "mongo db",
-  "main": "app.js",
+  "description": "this is the ",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.8",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongodb": "^4.10.0",
+    "mongoose": "^6.6.5"
   }
 }

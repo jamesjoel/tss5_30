@@ -1,56 +1,56 @@
-<%- include("../includes/header") %>
+<%- include('../includes/header') %>
 
-<div class="container bg-dark text-light" style="min-height:700px">
+<div class="container" style="min-height: 700px; margin-top: 80px;">
+    <form action="/student/save" method="post">
+    
     <div class="row">
-        <div class="col-md-8">
-            <br>
-            <br>
-            <br>
-            <h1>Login Form</h1>
-            <form action="/students/save" method="post">
-                <div class="form-group">
-                    <label for="x">Full Name</label>
-                    <input type="text" id ="x" name="fullname" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="age">Age</label>
-                    <input type="text"  id = "age" name="age" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="">Gender : </label>
-                    <label for="male">Male</label><input type="radio" name="gender" id="male"  name ="gender">
-                    <label for="female">Female</label> <input type="radio" id ="female" name="gender"  name="gender">
-                </div>
-                <div class="form-group">
-                    <label for="">City</label>
-                    <select name="" id="" class="form-control">
-                        <option value="">Indore</option>
-                        <option value="">Ujjain</option> 
-                        <option value="">Mahu</option>
-                        <option value="">Mandsaur</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="">Fee</label>
-                    <input type="text" name="fee"   name="fee" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="">Skills</label>
-                    HTML<input type="checkbox" name="skills" >
-                    CSS<input type="checkbox" name="skills" >
-                    JS<input type="checkbox" name="skills">
-                    ANGULAR<input type="checkbox" name="skills">
-                </div>
-                <div class="form-group">
-                    <label for="">address</label>
-                    <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
-                </div>
-                <br>
-                <br>
-                <input type="submit" value="add" class="btn btn-primary">
-            </form>
+        <div class="col-md-6 offset-md-3 my-4">
+            <div class="form-group">
+                <label for="x">Full Name</label>
+                <input type="text" id="x" name="fullname" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="">Age</label>
+                <input type="text" name="age" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="">Fee</label>
+                <input type="text" name="fee" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="">Gender</label>
+                <Br />
+                <label for="male">Male</label> <input value="male" id="male" type="radio" name="gender"  />
+                <label for="female">Female</label> <input value="female" id="female" type="radio" name="gender"  />
+            </div>
+            <div class="form-group">
+                <label for="">City</label>
+                <select class="form-control" name="city">
+                    <option>Select</option>
+                    <option>Indore</option>
+                    <option>Pune</option>
+                    <option>Mumbai</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="">Address</label>
+                <textarea class="form-control" name="address"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Skills</label>
+                <br />
+                <br />
+                Reading <input type="checkbox" value="reading"  name="skills"/>
+                Writing <input type="checkbox" value="writing" name="skills"/>
+                Singing <input type="checkbox" value="singing" name="skills"/>
+            </div>
+            <Br />
+            <br />
+            <input type="submit" value="Add" class="btn btn-primary" />
         </div>
     </div>
-</div>
+    </form>
 
-<%- include("../includes/footer") %>
+</div>
+<%- include('../includes/footer') %>
+Footer
