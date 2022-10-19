@@ -1,0 +1,46 @@
+<%- include('../includes/header') %>
+
+
+        <div class="container my-4" style="min-height: 700px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Contact Page</h2>
+                    
+                    <!-- <% city.forEach((x)=>{ %>
+                        <h3><%= x %></h3>
+                    <% }) %> -->
+
+                    <table class="table table-dark">
+                        <tr>
+                            <th>S.No.</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>City</th>
+                        </tr>
+
+                        <% info.forEach((a, n)=>{ %>
+                            <tr>
+                                <td><%= n+1 %></td>
+                                <td><%= a.name %></td>
+                                <td><%= a.age %></td>
+                                <td><%= a.city %></td>
+                            </tr>
+                        <% }) %>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <%- include('../includes/footer') %>
+
+
+
+        <!-- 
+
+            @media and screen (min-width : 670px){
+                .box{
+                    width : 350px;
+                }
+            }
+
+         -->
