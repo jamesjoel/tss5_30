@@ -1,8 +1,12 @@
 const routes = require("express").Router();
 const Student = require("../models/Student");
+const City = require("../models/City");
 
 routes.get("/", (req, res)=>{
-    res.render("pages/student");
+    City.find({}, (err, result)=>{
+        var pagedata = { city : result };
+        res.render("pages/student", pagedata);
+    })
 })
 
 routes.post("/save", (req, res)=>{
@@ -26,6 +30,13 @@ routes.get("/detail/:a", (req, res)=>{
         var pagedata = { result : result[0] };
         // console.log(result);
         res.render("pages/student-detail", pagedata);
+    })
+})
+
+routes.get("/delete/:a", (req, res)=>{
+    var id = req.params.a;
+    Student.remove({ _id : id }, (err)=>{
+        res.redirect("/student/list")
     })
 })
 
