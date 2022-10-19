@@ -4,12 +4,12 @@ const routes = require("express").Router()
  routes.get("/" ,(req,res)=>{
     res.render("pages/employee")
  })
-//  routes.get("/list" , (req,res)=>{
-//    Employess.find({} , (err, result)=>{
-//       var pagedata ={resulr : result}
-//       res.render("pages/employee-list", pagedata)
-//    })
-//  })
+ routes.get("/list" , (req,res)=>{
+   Employess.find({} , (err, result)=>{
+      var pagedata ={result : result}
+      res.render("pages/employee-list", pagedata)
+   })
+ })
 // //  this is the form post method routing
 
 routes.post("/", (req,res)=>{
