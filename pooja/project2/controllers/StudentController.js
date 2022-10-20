@@ -19,5 +19,7 @@ routes.get("/list", (req, res)=>{
         res.render("pages/student-list", pagedata);
     });
 })
-
+routes.get("/detail", (req,res)=>{
+    res.render("pages/student-detail")
+})
 module.exports = routes;
