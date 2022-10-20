@@ -61,4 +61,10 @@ routes.post("/update/:a", (req, res)=>{
     })
 })
 
+routes.get("/deleteall", (req, res)=>{
+    Student.remove({}, (err)=>{
+        res.redirect("/student/list");
+    })
+})
+
 module.exports = routes;

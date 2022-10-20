@@ -1,0 +1,18 @@
+<%- include('../includes/header') %>
+
+<div class="container" style="min-height: 700px; margin-top: 120px;">
+    <div class="row">
+        <div class="col-md-12">
+           <div class="row">
+                <% result.forEach((x)=>{ %>
+                    <div class="col-md-3">
+                        <img src="/photos/<%= x.image %>" style="height:180px;" />
+                    </div>
+
+                <% }) %>
+           </div>
+        </div>
+    </div>
+
+</div>
+<%- include('../includes/footer') %>
