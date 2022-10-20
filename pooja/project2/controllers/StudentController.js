@@ -21,5 +21,3 @@ routes.get("/list", (req, res)=>{
 })
 
 module.exports = routes;
-Footer
-© 2022 

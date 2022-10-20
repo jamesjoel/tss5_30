@@ -11,4 +11,4 @@ const a = mongoose.Schema({
     gender : String
 })
 
-module.exports= mongoose.model("student, a");
+module.exports= mongoose.model("student", a);
