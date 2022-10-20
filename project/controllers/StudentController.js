@@ -40,4 +40,25 @@ routes.get("/delete/:a", (req, res)=>{
     })
 })
 
+routes.get("/edit/:a", (req, res)=>{
+    var id = req.params.a;
+    Student.find({_id : id}, (err, result1)=>{
+        City.find({}, (err, result2)=>{
+            var pagedata = { city : result2, student : result1[0] };
+            res.render('pages/student-edit', pagedata);
+        })
+    })
+
+
+})
+
+routes.post("/update/:a", (req, res)=>{
+    console.log(req.body);
+    return;
+    var id = req.params.a;
+    Student.updateMany({ _id : id }, req.body, (err)=>{
+        res.redirect("/student/list");
+    })
+})
+
 module.exports = routes;
