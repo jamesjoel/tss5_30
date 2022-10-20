@@ -1,5 +1,4 @@
 <%- include('../includes/header') %>
-
 <div class="container" style="min-height: 700px; margin-top: 80px;">
     <form action="/student/save" method="post">
     
@@ -27,9 +26,9 @@
                 <label for="">City</label>
                 <select class="form-control" name="city">
                     <option>Select</option>
-                    <option>Indore</option>
-                    <option>Pune</option>
-                    <option>Mumbai</option>
+                    <!-- <% city.forEach(x=>{ %>
+                        <option><%= x.name %></option>
+                    <% }) %> -->
                 </select>
             </div>
             <div class="form-group">
@@ -52,5 +51,6 @@
     </form>
 
 </div>
+
+
 <%- include('../includes/footer') %>
-Footer
