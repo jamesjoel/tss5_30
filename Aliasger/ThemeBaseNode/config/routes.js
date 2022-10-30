@@ -1,15 +1,26 @@
 const routes = require("express").Router();
-//english
-routes.use("/", require("../controller/HomeController"));
-routes.use("/contact", require("../controller/ContactController"));
-routes.use("/shop", require("../controller/ShopController"));
-routes.use("/product", require("../controller/ProductController"));
-routes.use("/pages", require("../controller/PagesController"));
-routes.use("/about", require("../controller/AboutController"));
-routes.use("/help", require("../controller/HelpController"));
-routes.use("/faq", require("../controller/FaqController"));
-routes.use("/myaccount", require("../controller/MyAccountController"));
-routes.use("/dashboard", require("../controller/DashboardController"));
+//buyer
+routes.use("/", require("../controller/buyer/HomeController"));
+routes.use("/contact", require("../controller/buyer/ContactController"));
+routes.use("/shop", require("../controller/buyer/ShopController"));
+routes.use("/product", require("../controller/buyer/ProductController"));
+routes.use("/pages", require("../controller/buyer/PagesController"));
+routes.use("/about", require("../controller/buyer/AboutController"));
+routes.use("/help", require("../controller/buyer/HelpController"));
+routes.use("/faq", require("../controller/buyer/FaqController"));
+routes.use("/myaccount", require("../controller/buyer/MyAccountController"));
+
+
+
+
+
+
+
+
+
+// Seller
+routes.use("/dashboard", require("../controller/seller/DashboardController"));
+
 
 
 module.exports = routes;
