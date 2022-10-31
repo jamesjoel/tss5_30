@@ -230,7 +230,7 @@
     <div class="container right-panel-active">
       <!-- Sign Up -->
       <div class="container__form container--signup">
-        <form action="/dashboard/admin" method="post" class="form" id="form1">
+        <form action="/adminlogin/adminsignup" method="post" class="form" id="form1">
           <h2 class="form__title">Sign Up</h2>
           <input type="text" placeholder="User" name="username" class="input" />
           <input type="email" placeholder="Email" name="email" class="input" />
@@ -240,26 +240,26 @@
             name="password"
             class="input"
           />
-          <a class="btn" href="/dashboard" style="text-decoration: none"
-            >Sign Up</a
+          <input type="submit" class="btn" value="Submit" style="text-decoration: none"
+            ></
           >
         </form>
       </div>
 
       <!-- Sign In -->
       <div class="container__form container--signin">
-        <form action="#" class="form" id="form2">
+        <form action="/adminlogin" method="post"  class="form" id="form2">
           <h2 class="form__title">Sign In</h2>
-          <input type="email" placeholder="Email" name="email" class="input" />
+          <input type="email" placeholder="Email" name="lemail" class="input" />
           <input
             type="password"
             placeholder="Password"
-            name="password"
+            name="lpassword"
             class="input"
           />
           <a href="#" class="link">Forgot your password?</a>
-          <a class="btn" href="/dashboard" style="text-decoration: none"
-            >Sign In</a
+          <input type="submit" class="btn" value="Submit" style="text-decoration: none"
+            ></
           >
         </form>
       </div>
