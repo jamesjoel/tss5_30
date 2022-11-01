@@ -3,6 +3,7 @@ const app = express();
 const routes = require("./config/routes");
 const upload = require("express-fileupload");
 
+
 app.use(express.static(__dirname+"/assets"));
 app.set("view engine", "ejs");
 
