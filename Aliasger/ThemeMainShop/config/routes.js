@@ -10,19 +10,8 @@ routes.use("/help", require("../controller/buyer/HelpController"));
 routes.use("/faq", require("../controller/buyer/FaqController"));
 routes.use("/myaccount", require("../controller/buyer/MyAccountController"));
 
-
-
-
-
-
-
-
-
 // Seller
-routes.use("/dashboard", require("../controller/seller/DashboardController"));
-
-routes.use("/adminlogin", require("../controller/seller/AdminLoginController"));
-
-
+routes.use("/admin", require("../controller/seller/DashboardController"));
+routes.use("/sign", require("../controller/seller/MyAccountController"));
 
 module.exports = routes;

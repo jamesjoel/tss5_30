@@ -3,8 +3,10 @@ const mongoose = require("mongoose");
 require("../config/database");
 
 const Seller = mongoose.Schema({
-    username: String,
+    fname: String,
+    lname: String,
     email: String,
+    phone: Number,
     password: String
 }, { collection: "seller" })
 
