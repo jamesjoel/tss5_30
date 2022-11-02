@@ -3,7 +3,7 @@ require("../config/database");
 
 const Images = mongoose.Schema({
     title : String,
-    image : String
+    image :String
 })
 
-module.exports = mongoose.model("image", Images);
+module.exports = mongoose.model("image",Images)
