@@ -1,0 +1,92 @@
+
+<%- include('../includes/Header') %>
+
+<div class="container" style="min-height: 700px; margin-top: 80px;">
+    <form action="/teacher/set" method="post">
+    
+    <div class="row">
+        <div class="col-md-6 offset-md-3 my-4">
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="salary">Salary</label>
+                <input type="text" name="age"  id="salary" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="">Subject</label>
+                <select class="form-control" name="city">
+                    <option>Select</option>
+                    <option>Html & Css</option>
+                    <option>Node</option>
+                    <option>Angular</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="">Day</label> 
+                        <select class="form-control" name="day">
+                            <option>Select</option>
+                         <% for(var date = 1; date <= 31; date++) { %>
+                            <option><%= date %></option>
+                         <% } %>
+                        </select>
+                    </div>
+                </div>
+     
+                
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="">Month</label> 
+                        <select class="form-control" name="month">
+                            <option>Select</option>
+                            <option>January</option>
+                            <option>Feburary</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>Augest</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
+                            </select>
+                    </div>
+                    
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="">Year</label> 
+                        <select class="form-control" name="year">
+                            <option>Select</option>
+                         <% for(var date = 1970; date <= 2000; date++) { %>
+                            <option><%= date %></option>
+                         <% } %>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="">Address</label>
+                <textarea class="form-control" name="address"></textarea>
+            </div>
+<br />
+<br />
+            <input type="submit" value="Add" class="btn btn-success" />
+        </div>
+    </div>
+    </form>
+
+</div>
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<%- include('../includes/Header') %>
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <table class="table table-dark table-striped">
+<tr>
+    <th>Sr No.</th>
+    <th>FullName</th>
+    <th>Age</th>
+    <th>Fee</th>
+    <th>Gender</th>
+    <th>City</th>
+    <th>Address</th>
+    <th>Skills</th>
+    <th>Edit</th>
+    <th>Delete</th>
+</tr>
+
+<% result.forEach((x,n)=> { %>
+    <tr>
+        <td><%= n+1 %></td>
+        <td><%= x.fullname %></td>
+        <td><%= x.age %></td>
+        <td><%= x.fee %></td>
+        <td><%= x.gender %></td>
+        <td><%= x.city %></td>
+        <td><%= x.address %></td>
+        <td><%= x.skills %></td>
+       <td><a href="#" class="btn btn-primary">Edit</a></td>
+       <td><a href="#" class="btn btn-danger">Delete</a></td>
+      
+    </tr>
+    
+<% }) %>
+
+
+
+</table>
+
+    </div>
+</div>
+
+</body>
+</html>
