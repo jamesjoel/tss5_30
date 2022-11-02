@@ -1,7 +1,7 @@
 let user = {
     name : "rohit",
     age : 25,
-    newname : this.name
+    newname : user.name
 }
 
 console.log(user);
