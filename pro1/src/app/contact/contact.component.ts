@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+
+  a = 15;
+  b = "indore";
+
   constructor() { }
 
   ngOnInit(): void {

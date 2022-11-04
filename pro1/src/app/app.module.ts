@@ -8,7 +8,12 @@ import { MiniBoxComponent } from './mini-box/mini-box.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
+
+
 import { AboutComponent } from './about/about.component';
+
+
+
 import { ContactComponent } from './contact/contact.component';
 import { HelpusComponent } from './helpus/helpus.component';
 
