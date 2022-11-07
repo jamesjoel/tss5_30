@@ -1,1 +1,25 @@
-<h2>Help Us Page</h2>
+<div [ngSwitch]="z">
+    <h2 *ngSwitchCase = "'a'">Red</h2>
+    <h2 *ngSwitchCase = "'b'">Green</h2>
+    <h2 *ngSwitchCase = "'c'">Blue</h2>
+    <h2 *ngSwitchCase = "'d'">Yellow</h2>
+    <h2 *ngSwitchCase = "'e'">Pink</h2>
+    <h2 *ngSwitchDefault>Black</h2>
+</div>
+
+<!-- <h2 *ngFor="let x of arr">{{ x }}</h2> -->
+<button (click)="demo()">Login</button>
+<table class="table table-dark">
+    <tr>
+        <th>S.No.</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Fee</th>
+    </tr>
+    <tr *ngFor="let s of stu; let n = index">
+        <td>{{ n+1 }}</td>
+        <td>{{ s.name }}</td>
+        <td>{{ s.age }}</td>
+        <td>{{ s.fee }}</td>
+    </tr>
+</table>

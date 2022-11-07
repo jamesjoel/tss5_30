@@ -6,9 +6,17 @@
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam odio vel voluptatibus necessitatibus placeat consequuntur similique obcaecati reiciendis quam facilis corporis deserunt, sequi libero vitae. Illo itaque dolor alias harum!</p>
 
 </div>
-
-
-
 <ng-template #abc>
     <h1>Indore</h1>
+</ng-template>
+
+
+<h1>---------------------------</h1>
+
+<ng-template [ngIf]="x=='roh00it'" [ngIfElse]="box">
+    <h2>Indore</h2>
+</ng-template>
+
+<ng-template #box>
+    <h2>Mumbai</h2>
 </ng-template>

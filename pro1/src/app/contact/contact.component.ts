@@ -11,6 +11,8 @@ export class ContactComponent implements OnInit {
   a = 15;
   b = "indore";
 
+  x = 'rohit';
+
   constructor() { }
 
   ngOnInit(): void {
