@@ -1,0 +1,27 @@
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-12">
+            <input type="text" (keypress)="demo1()" (keyup)="demo2()"/>
+            <br />
+            <Br />
+            <input (copy)="demo6()" (paste)="demo7()" type="text"/>
+            <Br />
+            <Br />
+            <input type="text" (focus)="demo3()" (blur)="demo4()" style="background-color: {{a}};"/>
+            <br />
+            <br />
+            <input type="text" />
+            <br />
+            <br />
+            <input type="text" />
+            <br />
+            <br />
+            <select (change)="demo5()">
+                <option>Select</option>
+                <option>indore</option>
+                <option>mumbai</option>
+                <option>pune</option>
+            </select>
+        </div>
+    </div>
+</div>

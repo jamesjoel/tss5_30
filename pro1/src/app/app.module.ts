@@ -16,6 +16,10 @@ import { AboutComponent } from './about/about.component';
 
 import { ContactComponent } from './contact/contact.component';
 import { HelpusComponent } from './helpus/helpus.component';
+import { Event1Component } from './event1/event1.component';
+import { Event2Component } from './event2/event2.component';
+import { Event3Component } from './event3/event3.component';
+import { Event4Component } from './event4/event4.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { HelpusComponent } from './helpus/helpus.component';
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    HelpusComponent
+    HelpusComponent,
+    Event1Component,
+    Event2Component,
+    Event3Component,
+    Event4Component
   ],
   imports: [
     BrowserModule,
