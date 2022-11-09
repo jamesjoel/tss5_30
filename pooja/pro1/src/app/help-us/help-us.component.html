@@ -1,0 +1,27 @@
+<button (click)="demo()">login</button>
+<br>
+<br>
+<br>
+<div [ngSwitch]="z">
+    <h2 *ngSwitchCase="'a'">Red</h2>
+    <h2 *ngSwitchCse="'B'">white</h2>
+    <h2 *ngSwitchCase="'c'">yellow</h2>
+    <h2 *ngSwitchDefault="'D'">Violet</h2>
+</div>
+<h1 *ngFor="let x of arr">{{x}}</h1>
+<div class="container">
+    <table class="table-dark table">
+        <tr>
+            <th>S.no.</th>
+            <th>name</th>
+            <th>age</th>
+            <th>fee</th>
+        </tr>
+        <tr *ngFor="let s of stu, let n=index">
+            <td>{{n+1}}</td>
+            <td>{{s.name}}</td>
+            <td>{{s.age}}</td>
+            <td>{{s.fee}}</td>
+        </tr>
+    </table>
+</div>

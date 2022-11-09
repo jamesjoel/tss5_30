@@ -1,0 +1,20 @@
+<h1>Contact</h1>
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum consequatur laudantium repellat officia obcaecati eos, id harum distinctio laborum optio accusantium magni repudiandae delectus nemo, corrupti quae, saepe explicabo nobis.</p>
+<!-- <div *ngIf="a==15 && b=='indorehhh'; else box">
+    <h3 >Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia atque aperiam molestiae nam, porro aliquam iusto ipsa corrupti repellendus enim unde. Recusandae, saepe quidem? Laboriosam alias delectus natus veritatis sapiente!</h3>
+</div>
+<ng-template #box>
+    <h3>Pooja</h3>
+
+</ng-template> -->
+
+<ng-template [ngIf]="x=='rohit' " [ngIfElse]="box">
+    <h2>Indore</h2>
+</ng-template>
+<ng-template #box> <h2>Mumbai</h2>
+</ng-template>
+
+
+
+
+
