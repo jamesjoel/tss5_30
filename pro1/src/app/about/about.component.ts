@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-about',
@@ -9,8 +10,20 @@ import { Component, OnInit } from '@angular/core';
 
 export class AboutComponent{
 
-  fname : string = "rohit";
-  lname : string = "sharma";
-  age : number = 25;
+  data:any=[];
+
+  constructor(
+    private _http : HttpClient
+  ){
+
+  }
+
+
+  demo(){
+    this._http.get<any>("https://jsonplaceholder.typicode.com/albums").subscribe(result=>{
+      console.log(result);
+      this.data = result;
+    })
+  }
 
 }

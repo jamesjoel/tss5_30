@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule  } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BoxComponent } from './box/box.component';
@@ -20,6 +22,7 @@ import { Event1Component } from './event1/event1.component';
 import { Event2Component } from './event2/event2.component';
 import { Event3Component } from './event3/event3.component';
 import { Event4Component } from './event4/event4.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -35,11 +38,13 @@ import { Event4Component } from './event4/event4.component';
     Event1Component,
     Event2Component,
     Event3Component,
-    Event4Component
+    Event4Component,
+    UserComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

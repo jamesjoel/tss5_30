@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+            <button class="btn btn-primary" (click)="show()">Show <span *ngIf="a" class="spinner-border text-light spinner-border-sm"></span></button>
+            <table class="table table-dark mt-3">
+                <tr>
+                    <th>S.No.</th>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>City</th>
+                </tr>
+                <tr *ngFor="let u of users; let n = index">
+                    <td>{{ n+1 }}</td>
+                    <td>{{ u.name }}</td>
+                    <td>{{ u.username }}</td>
+                    <td>{{ u.email }}</td>
+                    <td>{{ u.address.city }}</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</div>

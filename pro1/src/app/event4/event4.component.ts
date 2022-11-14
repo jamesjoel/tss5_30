@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MyserviceService } from '../service/myservice.service';
 
 @Component({
   selector: 'app-event4',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Event4Component implements OnInit {
 
-  constructor() { }
+  constructor(
+    private x : MyserviceService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  demo(){
+    this.x.hello();
   }
 
 }

@@ -8,6 +8,7 @@ import { Event1Component } from './event1/event1.component';
 import { Event2Component } from './event2/event2.component';
 import { Event3Component } from './event3/event3.component';
 import { Event4Component } from './event4/event4.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path : "event4",
     component : Event4Component
+  },
+  {
+    path : "user",
+    component : UserComponent
   }
 ];
 
