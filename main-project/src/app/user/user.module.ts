@@ -12,6 +12,7 @@ import { NewArrivalComponent } from './shared/new-arrival/new-arrival.component'
 import { WatchChoiceComponent } from './shared/watch-choice/watch-choice.component';
 import { InfoComponent } from './shared/info/info.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     NewArrivalComponent,
     WatchChoiceComponent,
     InfoComponent,
-    FooterComponent
+    FooterComponent,
+    SignupComponent
   ],
   imports: [
     CommonModule,
