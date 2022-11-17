@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CityService } from 'src/app/services/city.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -8,16 +9,39 @@ import { CityService } from 'src/app/services/city.service';
 })
 export class SignupComponent implements OnInit {
 
+  signupForm : FormGroup;
+  checkForm = false;
+
   allCity : any =[];
   constructor(
-    private _city : CityService
+    private _city : CityService,
+    private _fb : FormBuilder
   ) {
-    this._city.getCity().subscribe(result=>{
-      this.allCity = result;
-    })
+      this._city.getCity().subscribe(result=>{
+        this.allCity = result;
+      })
+
+      this.signupForm = this._fb.group({
+          fullname : ["", Validators.required],
+          email : ["", Validators.required],
+          password : ["", Validators.required],
+          re_password : ["", Validators.required],
+          address : ["", Validators.required],
+          city : ["", Validators.required],
+          gender : ["", Validators.required],
+          contact : ["", Validators.required]
+      });
+
    }
 
   ngOnInit(): void {
   }
 
+
+  save(){
+    if(this.signupForm.invalid){
+      this.checkForm = true;
+    }
+    //console.log(this.signupForm.value);
+  }
 }
