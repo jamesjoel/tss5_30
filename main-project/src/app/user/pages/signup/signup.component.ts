@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CityService } from 'src/app/services/city.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { checkPass, checkLength, checkNum } from '../../../helpers/custom.validation';
 
 @Component({
   selector: 'app-signup',
@@ -11,6 +12,9 @@ export class SignupComponent implements OnInit {
 
   signupForm : FormGroup;
   checkForm = false;
+
+  x = "password";
+  
 
   allCity : any =[];
   constructor(
@@ -23,13 +27,15 @@ export class SignupComponent implements OnInit {
 
       this.signupForm = this._fb.group({
           fullname : ["", Validators.required],
-          email : ["", Validators.required],
+          email : ["", [Validators.required, Validators.email]],
           password : ["", Validators.required],
           re_password : ["", Validators.required],
           address : ["", Validators.required],
           city : ["", Validators.required],
           gender : ["", Validators.required],
           contact : ["", Validators.required]
+      }, {
+        validator : [checkPass(), checkNum(), checkLength()]
       });
 
    }
@@ -44,4 +50,12 @@ export class SignupComponent implements OnInit {
     }
     //console.log(this.signupForm.value);
   }
+
+  showPass(){
+    this.x = this.x=='password' ? 'text' : 'password';
+  }
+
+
+  
+
 }
