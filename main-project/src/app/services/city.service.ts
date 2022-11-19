@@ -13,4 +13,10 @@ export class CityService {
   getCity(){
     return this._http.get<any>("http://localhost:3000/api/city");
   }
+  getState(){
+    return this._http.get<any>("http://localhost:3000/api/city/state");
+  }
+  getCityByState(a:any){
+    return this._http.get<any>("http://localhost:3000/api/city/citybystate/"+a);
+  }
 }
