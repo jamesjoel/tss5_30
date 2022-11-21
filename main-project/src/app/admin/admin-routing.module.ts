@@ -6,6 +6,7 @@ import { CategoryComponent } from './pages/category/category.component';
 import { CityComponent } from './pages/city/city.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
+
 const routes: Routes = [
   {
     path : "",

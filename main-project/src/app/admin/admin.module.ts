@@ -14,6 +14,7 @@ import { CategoryComponent } from './pages/category/category.component';
 import { CategoryListComponent } from './pages/category-list/category-list.component';
 
 
+
 @NgModule({
   declarations: [
     AdminComponent,
@@ -23,6 +24,7 @@ import { CategoryListComponent } from './pages/category-list/category-list.compo
     CityComponent,
     CategoryComponent,
     CategoryListComponent
+
   ],
   imports: [
     CommonModule,

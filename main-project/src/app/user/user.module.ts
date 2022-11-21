@@ -14,6 +14,7 @@ import { WatchChoiceComponent } from './shared/watch-choice/watch-choice.compone
 import { InfoComponent } from './shared/info/info.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { SignupComponent } from './pages/signup/signup.component';
     WatchChoiceComponent,
     InfoComponent,
     FooterComponent,
-    SignupComponent
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CityService } from 'src/app/services/city.service';
+import { UserService } from '../../services/user.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { checkPass, checkLength, checkNum } from '../../../helpers/custom.validation';
 
 @Component({
@@ -27,12 +29,14 @@ export class SignupComponent implements OnInit {
   allState : any = [];
   constructor(
     private _city : CityService,
-    private _fb : FormBuilder
+    private _fb : FormBuilder,
+    private _user : UserService,
+    private _router : Router
   ) {
       
 
       this.signupForm = this._fb.group({
-          fullname : ["", Validators.required],
+          name : ["", Validators.required],
           email : ["", [Validators.required, Validators.email]],
           password : ["", Validators.required],
           re_password : ["", Validators.required],
@@ -58,8 +62,14 @@ export class SignupComponent implements OnInit {
   save(){
     if(this.signupForm.invalid){
       this.checkForm = true;
+      return;
     }
-    //console.log(this.signupForm.value);
+    // this._user.addUser(this.signupForm.value)
+    // console.log(this.signupForm.value);
+    this._user.addUser(this.signupForm.value).subscribe(result=>{
+      //console.log(result);
+      this._router.navigate(["/login"]);
+    })
   }
 
   showPass(){
