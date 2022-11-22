@@ -1,5 +1,6 @@
 <div class="container my-4" style="min-height: 600px;">
     <form [formGroup]="signupForm">
+    
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <div class="card">
@@ -69,12 +70,18 @@
                         <small *ngIf="signupForm.controls['city'].errors && checkForm" class="text-danger">Select Your City</small>
                     </div>
                     <div class="form-group">
-                        <label for="">Gender</label>
+                        <label>Gender</label>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" value="male" class="custom-control-input" [ngClass]="{'is-invalid' : signupForm.controls['gender'].errors && checkForm }" id="male" formControlName="gender" >
+                            <label class="custom-control-label" for="male">Male</label>
+                          </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" value="female" class="custom-control-input is-invalid" [ngClass]="{'is-invalid' : signupForm.controls['gender'].errors && checkForm }" id="female" formControlName="gender" >
+                            <label class="custom-control-label" for="female">Female</label>
+                        </div>
+                        
                         <br />
-                        Male <input type="radio"  formControlName="gender" [ngClass]="{'is-invalid' : signupForm.controls['gender'].errors && checkForm }" value="male"/>
-                        Female <input type="radio"  formControlName="gender" [ngClass]="{'is-invalid' : signupForm.controls['gender'].errors && checkForm }" value="female"/>
-                        <br />
-                        <small *ngIf="signupForm.controls['gender'].errors && checkForm" class="text-danger">Select Your Gender</small>
+                        <small class="text-danger" *ngIf="signupForm.controls['gender'].errors && checkForm">Select Your Gender</small>
                     </div>
                     <div class="form-group">
                         <label for="">Contact</label>

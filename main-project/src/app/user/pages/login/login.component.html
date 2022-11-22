@@ -15,6 +15,7 @@
                         <label for="">Password</label>
                         <input type="password" [ngClass]="{'is-invalid' : loginForm.controls['password'].errors && checkForm }" formControlName="password" class="form-control" />
                     </div>
+                    <small class="text-danger">{{ errMsg }}</small>
                 </div>
                 <div class="card-footer">
                     <input type="submit" value="Login" (click)="submit()" class="btn btn-primary" />
