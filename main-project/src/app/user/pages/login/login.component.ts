@@ -34,9 +34,9 @@ export class LoginComponent implements OnInit {
       return;
     }
     this._auth.doLogin(this.loginForm.value).subscribe(result=>{
-      console.log(result);
+      // console.log(result);
       if(result.success){
-        
+        localStorage.setItem("token", result.token);
         this._router.navigate(["/"]);
       }else{
         if(result.errType == 1){
