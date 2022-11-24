@@ -5,6 +5,7 @@ import { CategoryListComponent } from './pages/category-list/category-list.compo
 import { CategoryComponent } from './pages/category/category.component';
 import { CityComponent } from './pages/city/city.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,11 @@ const routes: Routes = [
     children : [
       {
         path : "",
-        component : DashboardComponent
+        component : LoginComponent
+      },
+      {
+        path : "dashboard",
+        component :DashboardComponent
       },
       {
         path : "city",

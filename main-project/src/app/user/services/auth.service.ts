@@ -18,6 +18,8 @@ export class AuthService {
    doLogin(obj:any){
     return this._http.post<any>("http://localhost:3000/api/user/loginauth", obj);
    }
+
+   
    isLoggedIn(){
     if(localStorage.getItem("token")){
       return true;

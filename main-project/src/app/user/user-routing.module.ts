@@ -7,6 +7,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { MyAccountComponent } from './pages/my-account/my-account.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { UserComponent } from './user.component';
+import { AuthGuard } from './guards/auth.guard';
+import { AntiAuthGuard } from './guards/anti-auth.guard';
 
 const routes: Routes = [
   {
@@ -27,15 +29,18 @@ const routes: Routes = [
       },
       {
         path : "signup",
-        component : SignupComponent
+        component : SignupComponent,
+        canActivate : [AntiAuthGuard]
       },
       {
         path : "login",
-        component : LoginComponent
+        component : LoginComponent,
+        canActivate : [AntiAuthGuard]
       },
       {
         path : "my-account",
-        component : MyAccountComponent
+        component : MyAccountComponent,
+        canActivate :[AuthGuard]
       }
     ]
   }
