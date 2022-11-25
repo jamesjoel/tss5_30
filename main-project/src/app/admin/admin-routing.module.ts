@@ -6,6 +6,7 @@ import { CategoryComponent } from './pages/category/category.component';
 import { CityComponent } from './pages/city/city.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
@@ -19,19 +20,23 @@ const routes: Routes = [
       },
       {
         path : "dashboard",
-        component :DashboardComponent
+        component :DashboardComponent,
+        canActivate : [AuthGuard]
       },
       {
         path : "city",
-        component : CityComponent
+        component : CityComponent,
+        canActivate : [AuthGuard]
       },
       {
         path : "category",
-        component : CategoryComponent
+        component : CategoryComponent,
+        canActivate : [AuthGuard]
       },
       {
         path : "category/list",
-        component : CategoryListComponent
+        component : CategoryListComponent,
+        canActivate : [AuthGuard]
       }
     ]
   }

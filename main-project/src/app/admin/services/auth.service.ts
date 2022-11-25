@@ -18,4 +18,17 @@ export class AuthService {
       return this._http.post<any>("http://localhost:3000/api/admin/login", obj);
     }
 
+    isAdminLoggin(){
+      if(localStorage.getItem("admin_token")){
+        return true;
+      }
+      else{
+        return false;
+      }
+    }
+
+    logout(){
+      localStorage.removeItem("admin_token");
+      this._router.navigate(['/']);
+    }
 }

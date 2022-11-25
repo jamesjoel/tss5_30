@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   
   constructor(
     private _fb : FormBuilder,
-    private _auth : AuthService
+    private _auth : AuthService,
+    private _router : Router
   ) {
     this.adminLoginForm = this._fb.group({
       username : ["", Validators.required],
@@ -35,6 +37,9 @@ export class LoginComponent implements OnInit {
     // console.log(this.adminLoginForm.value);
     this._auth.doLogin(this.adminLoginForm.value).subscribe(result=>{
       if(result.success==true){
+        // console.log(result);
+        localStorage.setItem("admin_token", result.token);
+        this._router.navigate(["/admin/dashboard"]);
 
       }else{
         if(result.errType == 1){
