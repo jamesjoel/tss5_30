@@ -7,6 +7,8 @@ import { CityComponent } from './pages/city/city.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
+import { AntiAuthGuard } from './guards/anti-auth.guard';
+
 
 
 const routes: Routes = [
@@ -16,7 +18,8 @@ const routes: Routes = [
     children : [
       {
         path : "",
-        component : LoginComponent
+        component : LoginComponent,
+        canActivate : [AntiAuthGuard]
       },
       {
         path : "dashboard",

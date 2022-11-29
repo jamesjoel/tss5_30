@@ -10,5 +10,10 @@ routes.get("/", (req, res)=>{
         res.send(result);
     })
 })
-
+routes.delete("/:id", (req, res)=>{
+    var id = req.params.id;
+    Category.deleteMany({ _id : id }, (err)=>{
+        res.send({ success : true });
+    })
+})
 module.exports = routes;
