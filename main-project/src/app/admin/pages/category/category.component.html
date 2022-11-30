@@ -4,7 +4,7 @@
         <div class="col-md-6 offset-md-3">
             <div class="card">
                 <div class="card-header">
-                    <h4>Add Category</h4>
+                    <h4>{{ id ? "Update" : "Add" }} Category</h4>
                 </div>
                 <div class="card-body">
                     <div class="form-group">
@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <input type="submit" (click)="add()" value="Add" class="btn btn-success" />
+                    <input type="submit" (click)="add()" value="{{ id ? 'Update' : 'Add' }}" class="btn btn-success" />
                 </div>
             </div>
             

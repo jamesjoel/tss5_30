@@ -19,4 +19,10 @@ export class CategoryService {
   deleteCategory(obj:any){
     return this._http.delete<any>("http://localhost:3000/api/category/"+obj._id);
   }
+  getCategoryById(id:any){
+    return this._http.get<any>("http://localhost:3000/api/category/"+id);
+  }
+  upateCategroy(id:any, obj:any){
+    return this._http.put<any>("http://localhost:3000/api/category/"+id, obj);
+  }
 }

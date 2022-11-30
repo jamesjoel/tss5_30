@@ -40,6 +40,11 @@ const routes: Routes = [
         path : "category/list",
         component : CategoryListComponent,
         canActivate : [AuthGuard]
+      },
+      {
+        path : "category/edit/:id",
+        component : CategoryComponent,
+        canActivate : [AuthGuard]
       }
     ]
   }

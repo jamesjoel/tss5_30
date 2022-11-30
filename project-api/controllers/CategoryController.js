@@ -5,7 +5,7 @@ routes.post("/", (req, res)=>{
         res.send({ success : true });
     })
 })
-routes.get("/", (req, res)=>{
+routes.get("/", (req, res)=>{ // all categroy
     Category.find({}, (err, result)=>{
         res.send(result);
     })
@@ -13,6 +13,19 @@ routes.get("/", (req, res)=>{
 routes.delete("/:id", (req, res)=>{
     var id = req.params.id;
     Category.deleteMany({ _id : id }, (err)=>{
+        res.send({ success : true });
+    })
+})
+routes.get("/:id", (req, res)=>{
+    var id = req.params.id;
+    Category.find({_id:id}, (err, result)=>{
+        res.send(result[0]);
+    })
+})
+
+routes.put("/:id", (req, res)=>{
+    var id = req.params.id;
+    Category.updateMany({_id : id }, req.body, (err)=>{
         res.send({ success : true });
     })
 })
