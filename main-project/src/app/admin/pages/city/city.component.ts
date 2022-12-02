@@ -9,6 +9,10 @@ import { CityService } from 'src/app/services/city.service';
 export class CityComponent implements OnInit {
 
   allCity : any = [];
+
+  a = "gaurav";
+  b = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos libero aperiam tempora omnis voluptas atque assumenda consectetur alias aliquam, numquam nulla non ut nam iste voluptatibus aut doloribus, eius delectus.";
+
   constructor(
     private _city : CityService
   ) {

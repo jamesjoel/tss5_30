@@ -8,6 +8,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AntiAuthGuard } from './guards/anti-auth.guard';
+import { ProductComponent } from './pages/product/product.component';
+import { ProductListComponent } from './pages/product-list/product-list.component';
 
 
 
@@ -44,6 +46,16 @@ const routes: Routes = [
       {
         path : "category/edit/:id",
         component : CategoryComponent,
+        canActivate : [AuthGuard]
+      },
+      {
+        path : "product",
+        component : ProductComponent,
+        canActivate : [AuthGuard]
+      },
+      {
+        path : "product/list",
+        component : ProductListComponent,
         canActivate : [AuthGuard]
       }
     ]

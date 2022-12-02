@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  info = {
+    title : "Samsung Galaxy S12",
+    price : 12000
+  }
   constructor() { }
 
   ngOnInit(): void {

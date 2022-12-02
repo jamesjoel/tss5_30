@@ -14,6 +14,9 @@ import { CityComponent } from './pages/city/city.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { CategoryListComponent } from './pages/category-list/category-list.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ProductComponent } from './pages/product/product.component';
+import { ProductListComponent } from './pages/product-list/product-list.component';
+import { BoxComponent } from './shared/box/box.component';
 
 
 
@@ -26,7 +29,10 @@ import { LoginComponent } from './pages/login/login.component';
     CityComponent,
     CategoryComponent,
     CategoryListComponent,
-    LoginComponent
+    LoginComponent,
+    ProductComponent,
+    ProductListComponent,
+    BoxComponent
 
   ],
   imports: [

@@ -1,0 +1,45 @@
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <!-- <pre>{{ category | json }}</pre> -->
+            <div *ngIf="allProduct.length == 0; else dataFound" class="alert alert-danger">No Data Found</div>
+            <ng-template #dataFound>
+            <table class="table table-dark">
+                <tr>
+                    <th>S.No.</th>
+                    <th>Product Title</th>
+                    <th>Product Price</th>
+                    <th>Product Category</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <tr *ngFor="let p of allProduct; let n = index">
+                    <td>{{ n+1 }}</td>
+                    <td>{{ p.title }}</td>
+                    <td>{{ p.price }}</td>
+                    <td>{{ p.category }}</td>
+                    <td></td>
+                    <td><button (click)="askDelete(p)" class="btn btn-danger p-3" data-toggle="modal" data-target="#delModal">Delete</button></td>
+                </tr>
+            </table>
+            </ng-template>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="delModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Delete Product</h4>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure want to delete <b *ngIf="product">{{ product.title }}</b></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-dark p-3" #closeBtn data-dismiss="modal">NO</button>
+                <button class="btn btn-info p-3" (click)="confDelete(closeBtn)">YES</button>
+            </div>
+        </div>
+    </div>
+</div>
