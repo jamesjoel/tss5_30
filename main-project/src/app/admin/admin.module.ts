@@ -17,6 +17,10 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProductComponent } from './pages/product/product.component';
 import { ProductListComponent } from './pages/product-list/product-list.component';
 import { BoxComponent } from './shared/box/box.component';
+import { Demo1Component } from './pages/demo1/demo1.component';
+import { H1Component } from './shared/h1/h1.component';
+import { Demo2Component } from './pages/demo2/demo2.component';
+import { Box2Component } from './shared/box2/box2.component';
 
 
 
@@ -32,7 +36,11 @@ import { BoxComponent } from './shared/box/box.component';
     LoginComponent,
     ProductComponent,
     ProductListComponent,
-    BoxComponent
+    BoxComponent,
+    Demo1Component,
+    H1Component,
+    Demo2Component,
+    Box2Component
 
   ],
   imports: [

@@ -10,6 +10,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { AntiAuthGuard } from './guards/anti-auth.guard';
 import { ProductComponent } from './pages/product/product.component';
 import { ProductListComponent } from './pages/product-list/product-list.component';
+import { Demo1Component } from './pages/demo1/demo1.component';
+import { Demo2Component } from './pages/demo2/demo2.component';
 
 
 
@@ -56,6 +58,16 @@ const routes: Routes = [
       {
         path : "product/list",
         component : ProductListComponent,
+        canActivate : [AuthGuard]
+      },
+      {
+        path : "demo1",
+        component : Demo1Component,
+        canActivate : [AuthGuard]
+      },
+      {
+        path : "demo2",
+        component : Demo2Component,
         canActivate : [AuthGuard]
       }
     ]
