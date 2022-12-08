@@ -1,0 +1,29 @@
+<div class="container">
+    <form [formGroup]="stuForm">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="form-group">
+                <label for="">Full Name</label>
+                <input type="text" class="form-control" formControlName="name" [ngClass]="{'is-invalid' : checkForm && stuForm.controls['name'].errors }" />
+            </div>
+            <div class="form-group">
+                <label for="">Age</label>
+                <input type="text" class="form-control" formControlName="age" [ngClass]="{'is-invalid' : checkForm && stuForm.controls['age'].errors }" />
+            </div>
+            <div class="form-group">
+                <label for="">City</label>
+                <select formControlName="city" class="form-control" [ngClass]="{'is-invalid' : checkForm && stuForm.controls['city'].errors }" >
+                    <option value="">Select</option>
+                    <option value="indore">Indore</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="pune">Pune</option>
+                    <option value="bhopal">Bhopal</option>
+                </select>
+            </div>
+            <br />
+            <Br />
+            <input type="submit" value="{{ id ? 'Update' : 'Add' }}" class="btn btn-primary" (click)="submit()" />
+        </div>
+    </div>
+    </form>
+</div>
