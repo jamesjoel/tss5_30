@@ -21,6 +21,7 @@ import { Demo1Component } from './pages/demo1/demo1.component';
 import { H1Component } from './shared/h1/h1.component';
 import { Demo2Component } from './pages/demo2/demo2.component';
 import { Box2Component } from './shared/box2/box2.component';
+import { DeletePopupComponent } from './shared/delete-popup/delete-popup.component';
 
 
 
@@ -40,7 +41,8 @@ import { Box2Component } from './shared/box2/box2.component';
     Demo1Component,
     H1Component,
     Demo2Component,
-    Box2Component
+    Box2Component,
+    DeletePopupComponent
 
   ],
   imports: [

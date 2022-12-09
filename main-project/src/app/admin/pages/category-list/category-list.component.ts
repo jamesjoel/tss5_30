@@ -10,6 +10,7 @@ export class CategoryListComponent implements OnInit {
 
   allCategory:any=[];
   category:any;
+  tempCategory : any;
   constructor(
     private _cate : CategoryService
   ) {
@@ -23,6 +24,9 @@ export class CategoryListComponent implements OnInit {
   askDelete(obj:any){
     // console.log(obj);
     this.category = obj;
+    this.tempCategory = this.category;
+    this.tempCategory.title = this.category.name;
+    // console.log(this.tempCategory);
   }
 
   confDelete(btn:any){
