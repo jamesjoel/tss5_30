@@ -15,6 +15,7 @@ export class ProductComponent implements OnInit {
   checkForm = false;
   allCategory : any;
 
+  id : any;
   constructor(
     private _fb : FormBuilder,
     private _router : Router,
@@ -23,6 +24,8 @@ export class ProductComponent implements OnInit {
     private _cate : CategoryService
   ) {
     this.productForm = this._fb.group({
+      _id : null,
+      __v : null,
       title : ["", Validators.required],
       price : [null, Validators.required],
       category : ["", Validators.required],
@@ -34,6 +37,15 @@ export class ProductComponent implements OnInit {
     this._cate.getCategory().subscribe(result=>{
       this.allCategory = result;
     })
+
+    this.id = this._actRoute.snapshot.paramMap.get("id");
+    if(this.id){
+      this._pro.getProductById(this.id).subscribe(result=>{
+        this.productForm.setValue(result);
+      })
+    }
+
+    
    }
 
   ngOnInit(): void {
@@ -44,10 +56,18 @@ export class ProductComponent implements OnInit {
       this.checkForm = true;
       return;
     }
-    this._pro.addProduct(this.productForm.value).subscribe(result=>{
-      // console.log(result);
-      this._router.navigate(["/admin/product/list"]);
-    })
+    if(this.id){
+      this._pro.upateProduct(this.id, this.productForm.value).subscribe(result=>{
+
+        this._router.navigate(["/admin/product/list"]);
+      })
+    }else{
+
+      this._pro.addProduct(this.productForm.value).subscribe(result=>{
+        // console.log(result);
+        this._router.navigate(["/admin/product/list"]);
+      })
+    }
   }
 
 }

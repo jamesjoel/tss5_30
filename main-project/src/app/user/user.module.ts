@@ -17,6 +17,8 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MyAccountComponent } from './pages/my-account/my-account.component';
 import { ProductBoxComponent } from './shared/product-box/product-box.component';
+import { MyProfileComponent } from './pages/my-profile/my-profile.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { ProductBoxComponent } from './shared/product-box/product-box.component'
     SignupComponent,
     LoginComponent,
     MyAccountComponent,
-    ProductBoxComponent
+    ProductBoxComponent,
+    MyProfileComponent,
+    NotFoundComponent
   ],
   imports: [
     CommonModule,

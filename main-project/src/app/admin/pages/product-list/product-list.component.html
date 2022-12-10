@@ -18,7 +18,7 @@
                     <td>{{ p.title }}</td>
                     <td>{{ p.price }}</td>
                     <td>{{ p.category }}</td>
-                    <td></td>
+                    <td><a class="btn btn-sm btn-info p-3" routerLink="/admin/product/edit/{{ p._id }}">Edit</a></td>
                     <td><button (click)="askDelete(p)" class="btn btn-danger p-3" data-toggle="modal" data-target="#delModal">Delete</button></td>
                 </tr>
             </table>

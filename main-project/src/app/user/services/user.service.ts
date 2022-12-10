@@ -13,4 +13,8 @@ export class UserService {
   addUser(obj:any){
     return this._http.post<any>("http://localhost:3000/api/user", obj);
   }
+  getUserProfile(){
+    let token = localStorage.getItem("token");
+    // return this._http.get<any>("")
+  }
 }

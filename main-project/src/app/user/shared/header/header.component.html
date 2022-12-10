@@ -26,6 +26,7 @@
                                 <li><a routerLink="/contact">Contact</a></li>
                                 <ng-template [ngIf]="_auth.isLoggedIn()" [ngIfElse]="notLogin">
                                     <li><a routerLink="/my-account">My-Account</a></li>
+                                    <li><a routerLink="/my-profile">My-Profile</a></li>
                                     <li><a style="cursor: pointer;" (click)="_auth.logout()">Logout</a></li>
                                 </ng-template>
                                 <ng-template #notLogin>

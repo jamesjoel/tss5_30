@@ -9,6 +9,8 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { UserComponent } from './user.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AntiAuthGuard } from './guards/anti-auth.guard';
+import { MyProfileComponent } from './pages/my-profile/my-profile.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -41,6 +43,11 @@ const routes: Routes = [
         path : "my-account",
         component : MyAccountComponent,
         canActivate :[AuthGuard]
+      },
+      {
+        path : "my-profile",
+        component : MyProfileComponent,
+        canActivate : [AuthGuard]
       }
     ]
   }

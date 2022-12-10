@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+// import { NotFoundComponent } from './user/pages/not-found/not-found.component';
 
 // Lazy Loading our modules here
 

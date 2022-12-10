@@ -69,6 +69,11 @@ const routes: Routes = [
         path : "demo2",
         component : Demo2Component,
         canActivate : [AuthGuard]
+      },
+      {
+        path : "product/edit/:id",
+        component : ProductComponent,
+        canActivate : [AuthGuard]
       }
     ]
   }
