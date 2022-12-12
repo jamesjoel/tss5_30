@@ -15,5 +15,14 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  demo(){
+    console.log("*******************");
+  }
+
+  demo2(obj:any){
+    // console.log(obj);
+    // obj.click();
+    obj.mouseout();
+  }
 
 }

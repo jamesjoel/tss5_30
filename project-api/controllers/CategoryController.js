@@ -6,7 +6,7 @@ routes.post("/", (req, res)=>{
     })
 })
 routes.get("/", (req, res)=>{ // all categroy
-    console.log(req.headers);
+    
     Category.find({}, (err, result)=>{
         res.send(result);
     })
