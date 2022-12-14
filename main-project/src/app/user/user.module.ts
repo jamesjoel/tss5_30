@@ -20,6 +20,7 @@ import { ProductBoxComponent } from './shared/product-box/product-box.component'
 import { MyProfileComponent } from './pages/my-profile/my-profile.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { UpdateProfileComponent } from './pages/update-profile/update-profile.component';
+import { ChangePasswordComponent } from './pages/change-password/change-password.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { UpdateProfileComponent } from './pages/update-profile/update-profile.co
     ProductBoxComponent,
     MyProfileComponent,
     NotFoundComponent,
-    UpdateProfileComponent
+    UpdateProfileComponent,
+    ChangePasswordComponent
   ],
   imports: [
     CommonModule,

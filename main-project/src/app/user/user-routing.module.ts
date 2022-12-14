@@ -12,6 +12,7 @@ import { AntiAuthGuard } from './guards/anti-auth.guard';
 import { MyProfileComponent } from './pages/my-profile/my-profile.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { UpdateProfileComponent } from './pages/update-profile/update-profile.component';
+import { ChangePasswordComponent } from './pages/change-password/change-password.component';
 
 const routes: Routes = [
   {
@@ -53,6 +54,11 @@ const routes: Routes = [
       {
         path : "my-profile/update",
         component : UpdateProfileComponent,
+        canActivate : [AuthGuard]
+      },
+      {
+        path : "my-profile/change-password",
+        component : ChangePasswordComponent,
         canActivate : [AuthGuard]
       }
     ]
