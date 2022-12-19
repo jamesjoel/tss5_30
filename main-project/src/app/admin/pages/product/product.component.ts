@@ -31,7 +31,8 @@ export class ProductComponent implements OnInit {
       category : ["", Validators.required],
       detail : ["", Validators.required],
       discount : [null, Validators.required],
-      feature : [""]
+      feature : [""],
+      image : ["", Validators.required]
     })
 
     this._cate.getCategory().subscribe(result=>{
@@ -51,7 +52,7 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submit(){
+  submit(photo:any){
     if(this.productForm.invalid){
       this.checkForm = true;
       return;
@@ -63,7 +64,14 @@ export class ProductComponent implements OnInit {
       })
     }else{
 
-      this._pro.addProduct(this.productForm.value).subscribe(result=>{
+      // console.log(photo.files[0]);
+      let image = photo.files[0];
+      let form = new FormData();
+      form.append("data", JSON.stringify(this.productForm.value));
+      form.append("image", image);
+      
+
+      this._pro.addProduct(form).subscribe(result=>{
         // console.log(result);
         this._router.navigate(["/admin/product/list"]);
       })

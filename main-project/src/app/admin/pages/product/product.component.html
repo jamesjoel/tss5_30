@@ -14,6 +14,13 @@
                     </div>
                     <div class="form-group">
                         
+                        <label for="">Product Image</label>
+                        
+                        <input type="file" #photo class="form-control" formControlName="image" [ngClass]="{'is-invalid' : checkForm && productForm.controls['image'].errors }"/>
+                        <small *ngIf="checkForm && productForm.controls['image'].errors" class="text-danger">Select Product Image</small>
+                    </div>
+                    <div class="form-group">
+                        
                         <label for="">Product Price</label>
                         
                         <input type="text" class="form-control" formControlName="price" [ngClass]="{'is-invalid' : checkForm && productForm.controls['price'].errors }"/>
@@ -53,7 +60,7 @@
                     
                 </div>
                 <div class="card-footer">
-                    <input type="submit" (click)="submit()" value="{{ id ? 'Update' : 'Add' }}" class="btn btn-success" />
+                    <input type="submit" (click)="submit(photo)" value="{{ id ? 'Update' : 'Add' }}" class="btn btn-success" />
                 </div>
             </div>
             
