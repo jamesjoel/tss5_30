@@ -12,6 +12,7 @@ import { ProductComponent } from './pages/product/product.component';
 import { ProductListComponent } from './pages/product-list/product-list.component';
 import { Demo1Component } from './pages/demo1/demo1.component';
 import { Demo2Component } from './pages/demo2/demo2.component';
+import { SliderComponent } from './pages/slider/slider.component';
 
 
 
@@ -73,6 +74,11 @@ const routes: Routes = [
       {
         path : "product/edit/:id",
         component : ProductComponent,
+        canActivate : [AuthGuard]
+      },
+      {
+        path : "slider",
+        component : SliderComponent,
         canActivate : [AuthGuard]
       }
     ]

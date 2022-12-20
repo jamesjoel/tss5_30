@@ -29,7 +29,12 @@ routes.post("/", (req, res)=>{
 })
 routes.get("/", (req, res)=>{ // all categroy
     Product.find({}, (err, result)=>{
-        res.send(result);
+        let new_result = result.map((x)=>{
+            x.image = "http://localhost:3000/pro_img/"+x.image;
+            return x;
+        })
+
+        res.send(new_result);
     })
 })
 routes.delete("/:id", (req, res)=>{

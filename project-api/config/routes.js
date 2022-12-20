@@ -7,6 +7,7 @@ routes.use("/api/user", require("../controllers/UserController"));
 routes.use("/api/userprofile", require("../controllers/UserProfileController"));
 routes.use("/api/admin/login", require("../controllers/AdminLoginController"));
 routes.use("/api/product", require("../controllers/ProductController"));
+routes.use("/api/image", require("../controllers/ImageController"));
 
 
 
