@@ -1,6 +1,6 @@
 <div class="container my-4">
     <div class="row">
-        <div class="col-md-8 offset-md-2">
+        <div class="col-md-12">
             <!-- <pre>{{ category | json }}</pre> -->
             <div *ngIf="allProduct.length == 0; else dataFound" class="alert alert-danger">No Data Found</div>
             <ng-template #dataFound>
@@ -10,14 +10,16 @@
                     <th>Product Title</th>
                     <th>Product Price</th>
                     <th>Product Category</th>
+                    <th>Discount</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
                 <tr *ngFor="let p of allProduct; let n = index">
                     <td>{{ n+1 }}</td>
                     <td>{{ p.title }}</td>
-                    <td>{{ p.price }}</td>
+                    <td>{{ p.price | currency }}</td>
                     <td>{{ p.category }}</td>
+                    <td>{{ p.discount | discount : p.price | currency }}</td>
                     <td><a class="btn btn-sm btn-info p-3" routerLink="/admin/product/edit/{{ p._id }}">Edit</a></td>
                     <td><button (click)="askDelete(p)" class="btn btn-danger p-3" data-toggle="modal" data-target="#delModal">Delete</button></td>
                 </tr>

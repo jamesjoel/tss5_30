@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  fee = 1500;
+  a = new Date();
   name = "Amar";
   para = "hello world";
   constructor() { }

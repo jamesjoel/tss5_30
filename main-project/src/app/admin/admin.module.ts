@@ -23,6 +23,7 @@ import { Demo2Component } from './pages/demo2/demo2.component';
 import { Box2Component } from './shared/box2/box2.component';
 import { DeletePopupComponent } from './shared/delete-popup/delete-popup.component';
 import { SliderComponent } from './pages/slider/slider.component';
+import { DiscountPipe } from './pipes/discount.pipe';
 
 
 
@@ -44,7 +45,8 @@ import { SliderComponent } from './pages/slider/slider.component';
     Demo2Component,
     Box2Component,
     DeletePopupComponent,
-    SliderComponent
+    SliderComponent,
+    DiscountPipe
 
   ],
   imports: [

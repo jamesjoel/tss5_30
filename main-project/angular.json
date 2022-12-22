@@ -34,11 +34,12 @@
               "src/assets/css/themify-icons.css",
               "src/assets/css/slick.css",
               "src/assets/css/nice-select.css",
-              "src/assets/css/style.css"
+              "src/assets/css/style.css",
+              "src/assets/css/slider.css"
             ],
             "scripts": [
               "src/assets/js/vendor/modernizr-3.5.0.min.js",
-              "src/assets/js/vendor/jquery-1.12.4.min.js",
+              "src/assets/js/jquery.js",
               "src/assets/js/popper.min.js",
               "src/assets/js/bootstrap.min.js",
               "src/assets/js/jquery.slicknav.min.js",
@@ -51,6 +52,7 @@
               "src/assets/js/jquery.nice-select.min.js",
               "src/assets/js/jquery.sticky.js",
               "src/assets/js/plugins.js",
+              "src/assets/js/slider.js",
               "src/assets/js/main.js"
             ]
           },

@@ -17,7 +17,11 @@
                         <label for="">Product Image</label>
                         
                         <input type="file" #photo class="form-control" formControlName="image" [ngClass]="{'is-invalid' : checkForm && productForm.controls['image'].errors }"/>
-                        <small *ngIf="checkForm && productForm.controls['image'].errors" class="text-danger">Select Product Image</small>
+                        <div *ngIf="checkForm && productForm.controls['image'].errors">
+                            <small *ngIf="productForm.controls['image'].errors['required']" class="text-danger">Select Product Image</small>
+                            <small *ngIf="productForm.controls['image'].errors['typeErr']" class="text-danger">This File Type Not Allowed</small>
+                            <small *ngIf="productForm.controls['image'].errors['sizeErr']" class="text-danger">Upload only less then 4 mb Image</small>
+                        </div>
                     </div>
                     <div class="form-group">
                         

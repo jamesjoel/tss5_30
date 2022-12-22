@@ -53,9 +53,11 @@ export class ProductComponent implements OnInit {
   }
 
   submit(photo:any){
+    let image = photo.files[0];
+    
     if(this.productForm.invalid){
       this.checkForm = true;
-      return;
+     
     }
     if(this.id){
       this._pro.upateProduct(this.id, this.productForm.value).subscribe(result=>{
@@ -65,16 +67,37 @@ export class ProductComponent implements OnInit {
     }else{
 
       // console.log(photo.files[0]);
-      let image = photo.files[0];
-      let form = new FormData();
-      form.append("data", JSON.stringify(this.productForm.value));
-      form.append("image", image);
       
+      
+      let form = new FormData();
+      if(image){
 
-      this._pro.addProduct(form).subscribe(result=>{
-        // console.log(result);
-        this._router.navigate(["/admin/product/list"]);
-      })
+      
+      if(image.type == "image/jpeg" || image.type == "image/png" || image.type == "image/jpg" || image.type == "image/svg")
+      {
+        if(image.size <= (1024*1024*2)){
+          if(! this.productForm.invalid){
+
+            form.append("data", JSON.stringify(this.productForm.value));
+            form.append("image", image);
+          
+    
+            this._pro.addProduct(form).subscribe(result=>{
+              // console.log(result);
+              this._router.navigate(["/admin/product/list"]);
+            })
+          }
+        }else{
+          this.productForm.controls['image'].setErrors({ sizeErr : true });
+
+        }
+      }else{
+        this.productForm.controls['image'].setErrors({ typeErr : true });
+      }
+
+      
+      
+    }
     }
   }
 
