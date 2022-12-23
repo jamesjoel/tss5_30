@@ -12,10 +12,21 @@ routes.post("/", (req, res)=>{
     let newname = str+"."+ext;
     file.mv(path.resolve()+"/assets/slider/"+newname, (err)=>{
         Image.create({ name : newname }, (err)=>{
-            res.send({ success : true });
+            let obj = { name : "http://localhost:3000/slider/"+newname };
+            res.send(obj);
         })
     })
 
+})
+
+routes.get("/", (req, res)=>{
+    Image.find({}, (err, result)=>{
+        let newresult = result.map((x)=>{
+               x.name = "http://localhost:3000/slider/"+x.name; 
+               return x;
+        })
+        res.send(newresult);
+    })
 })
 
 module.exports = routes;

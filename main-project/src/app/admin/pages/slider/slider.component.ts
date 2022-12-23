@@ -8,9 +8,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SliderComponent implements OnInit {
 
+  allImage:any=[];
+  image:any;
   constructor(
     private _http :HttpClient
-  ) { }
+  ) {
+    this._http.get<any>("http://localhost:3000/api/image").subscribe(result=>{
+      this.allImage = result;
+    })
+   }
 
   ngOnInit(): void {
   }
@@ -22,6 +28,8 @@ export class SliderComponent implements OnInit {
 
     this._http.post<any>("http://localhost:3000/api/image", form).subscribe(result=>{
       console.log(result);
+      this.allImage.push(result);
+      this.image="";
     })
   }
 }

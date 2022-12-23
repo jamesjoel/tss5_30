@@ -3,10 +3,16 @@
         <div class="col-md-12">
             <div class="form-group">
                 <label for="">Select Image</label>
-                <input type="file" #img class="form-control" />
+                <input type="file" [(ngModel)]="image" #img class="form-control" />
                 <br />
                 <input type="button" (click)="add(img)" class="btn btn-info" value="Add"/>
             </div>
         </div>
     </div>
+    <div class="row">
+        <div *ngFor="let i of allImage" class="col-md-2">
+            <img src="{{ i.name }}" class="img-thumbnail" />
+        </div>
+    </div>
+
 </div>
