@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CityService } from 'src/app/services/city.service';
+import { CityPaginationService } from '../../services/city-pagination.service';
+
 
 @Component({
   selector: 'app-city',
@@ -9,21 +10,36 @@ import { CityService } from 'src/app/services/city.service';
 export class CityComponent implements OnInit {
 
   allCity : any = [];
-
-  a = "gaurav";
-  b = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos libero aperiam tempora omnis voluptas atque assumenda consectetur alias aliquam, numquam nulla non ut nam iste voluptatibus aut doloribus, eius delectus.";
+  totalRec : any;
+  recPerPage = 200;
+  totalPages : any;
+  skip=0;
+  currentPage = 0;
+  page = 1;
 
   constructor(
-    private _city : CityService
+    private _cityPage : CityPaginationService
   ) {
-
-      this._city.getCity().subscribe(result=>{
+      this._cityPage.getTotalCity().subscribe(result=>{
+        this.totalRec = result.total;
+        this.totalPages = Math.ceil(this.totalRec/this.recPerPage); // 1221/100
+        
+      })  
+      
+      this._cityPage.getRecord(this.recPerPage, this.skip).subscribe(result=>{
         this.allCity = result;
       })
-
    }
 
   ngOnInit(): void {
+  }
+
+  paginate(a:any){
+    this.page = a;
+    this.currentPage = (a-1)*this.recPerPage;
+    this._cityPage.getRecord(this.recPerPage, a).subscribe(result=>{
+      this.allCity = result;
+    })
   }
 
 }

@@ -24,6 +24,7 @@ import { Box2Component } from './shared/box2/box2.component';
 import { DeletePopupComponent } from './shared/delete-popup/delete-popup.component';
 import { SliderComponent } from './pages/slider/slider.component';
 import { DiscountPipe } from './pipes/discount.pipe';
+import { MydirDirective } from './directives/mydir.directive';
 
 
 
@@ -46,7 +47,8 @@ import { DiscountPipe } from './pipes/discount.pipe';
     Box2Component,
     DeletePopupComponent,
     SliderComponent,
-    DiscountPipe
+    DiscountPipe,
+    MydirDirective
 
   ],
   imports: [

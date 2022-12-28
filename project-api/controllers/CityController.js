@@ -18,6 +18,27 @@ routes.get("/state", (req, res)=>{
     })
 })
 
+
+
+routes.get("/totalcity", (req, res)=>{
+    City.count((err, result)=>{
+        res.send({ total : result });
+    })
+})
+routes.get("/pagination/:a/:b", (req, res)=>{
+    var total = req.params.a; // 200
+    var skip = req.params.b; // 3
+    if(skip !=0 ){
+
+        skip = (skip-1)*total;
+    }
+
+    City.find().skip(skip).limit(total).exec((err, result)=>{
+        res.send(result);
+    })
+})
+
+
 module.exports = routes;
 
 /*
