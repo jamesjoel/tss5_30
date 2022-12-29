@@ -8,7 +8,8 @@ const User = mongoose.Schema({
     state : String,
     city : String,
     gender : String,
-    contact : String
+    contact : String,
+    otp : { type : Number, default : null }
 })
 
 module.exports = mongoose.model("user", User);

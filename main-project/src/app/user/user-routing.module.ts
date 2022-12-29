@@ -13,6 +13,9 @@ import { MyProfileComponent } from './pages/my-profile/my-profile.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { UpdateProfileComponent } from './pages/update-profile/update-profile.component';
 import { ChangePasswordComponent } from './pages/change-password/change-password.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { OtpComponent } from './pages/otp/otp.component';
+import { NewPasswordComponent } from './pages/new-password/new-password.component';
 
 const routes: Routes = [
   {
@@ -60,6 +63,18 @@ const routes: Routes = [
         path : "my-profile/change-password",
         component : ChangePasswordComponent,
         canActivate : [AuthGuard]
+      },
+      {
+        path : "forgot-password",
+        component : ForgotPasswordComponent
+      },
+      {
+        path : "otp",
+        component : OtpComponent
+      },
+      {
+        path : "new-password",
+        component : NewPasswordComponent
       }
     ]
   }

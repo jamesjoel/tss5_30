@@ -4,6 +4,7 @@ const routes = require("express").Router();
 routes.use("/api/city", require("../controllers/CityController"));
 routes.use("/api/category", require("../controllers/CategoryController"));
 routes.use("/api/user", require("../controllers/UserController"));
+routes.use("/api/forgotpassword", require("../controllers/ForgotPasswordController"));
 routes.use("/api/userprofile", require("../controllers/UserProfileController"));
 routes.use("/api/admin/login", require("../controllers/AdminLoginController"));
 routes.use("/api/product", require("../controllers/ProductController"));

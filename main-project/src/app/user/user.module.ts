@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { UserRoutingModule } from './user-routing.module';
 import { UserComponent } from './user.component';
@@ -21,6 +22,9 @@ import { MyProfileComponent } from './pages/my-profile/my-profile.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { UpdateProfileComponent } from './pages/update-profile/update-profile.component';
 import { ChangePasswordComponent } from './pages/change-password/change-password.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { OtpComponent } from './pages/otp/otp.component';
+import { NewPasswordComponent } from './pages/new-password/new-password.component';
 
 
 @NgModule({
@@ -42,12 +46,16 @@ import { ChangePasswordComponent } from './pages/change-password/change-password
     MyProfileComponent,
     NotFoundComponent,
     UpdateProfileComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    ForgotPasswordComponent,
+    OtpComponent,
+    NewPasswordComponent
   ],
   imports: [
     CommonModule,
     UserRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class UserModule { }
