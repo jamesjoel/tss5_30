@@ -16,6 +16,7 @@ import { ChangePasswordComponent } from './pages/change-password/change-password
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { OtpComponent } from './pages/otp/otp.component';
 import { NewPasswordComponent } from './pages/new-password/new-password.component';
+import { MyCartComponent } from './pages/my-cart/my-cart.component';
 
 const routes: Routes = [
   {
@@ -75,6 +76,10 @@ const routes: Routes = [
       {
         path : "new-password",
         component : NewPasswordComponent
+      },
+      {
+        path : "my-cart",
+        component : MyCartComponent
       }
     ]
   }

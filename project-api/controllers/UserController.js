@@ -37,7 +37,13 @@ routes.post("/loginauth", (req, res)=>{
     })
 })
 
-
+routes.post("/checkusername", (req, res)=>{
+    // console.log(req.body);
+    let user = req.body.user;
+    User.find({ email : user }, (err, result)=>{
+        res.send({ size : result.length });
+    })
+})
 
 module.exports = routes;
 

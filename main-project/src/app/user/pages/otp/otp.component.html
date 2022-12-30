@@ -1,0 +1,14 @@
+<div class="container my-4" style="min-height: 700px;">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h3>Enter Your OTP</h3>
+            <div class="form-group">
+                <label>OTP</label>
+                <input type="text" [(ngModel)]="otp" class="form-control" />
+                <small class="text-danger">{{ errMsg }}</small>
+            </div>
+            <br />
+            <input type="submit" (click)="check()" value="OK" class="btn btn-primary" />
+        </div>
+    </div>
+</div>

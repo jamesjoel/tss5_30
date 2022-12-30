@@ -9,6 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class HomeComponent implements OnInit {
 
   allProduct : any;
+  cartArr:any = [];
   constructor(
     private _pro : ProductService
   ) {
@@ -20,6 +21,12 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit(): void {
+  }
+
+  addToCart(obj:any){
+    this.cartArr.push(obj._id);
+    // console.log(this.cartArr);
+    localStorage.setItem("cart", this.cartArr);
   }
 
 }

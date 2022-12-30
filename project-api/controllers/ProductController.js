@@ -56,4 +56,13 @@ routes.put("/:id", (req, res)=>{
         res.send({ success : true });
     })
 })
+
+routes.post("/productbycart", (req, res)=>{
+    // console.log(req.body);
+    let ids = req.body.cart;
+    Product.find().where("_id").in(ids).exec((err, result)=>{
+        // console.log(result);
+        res.send(result);
+    })
+})
 module.exports = routes;

@@ -2,7 +2,7 @@
     <div class="popular-img">
         <img src="{{ pro.image }}" alt="" style="height: 250px;">
         <div class="img-cap">
-            <span><a routerLink="/">View More</a></span>
+            <span><button (click)="addToCart(pro)" class="btn btn-primary">Add To Cart</button></span>
         </div>
         <div class="favorit-items">
             <span class="flaticon-heart"></span>

@@ -15,10 +15,11 @@
                     </div>
                     <div class="form-group">
                         <label for="">Email/Username</label>
-                        <input type="text" formControlName="email" [ngClass]="{'is-invalid' : signupForm.controls['email'].errors && checkForm }" class="form-control" />
+                        <input type="text" (blur)="checkUserName()" formControlName="email" [ngClass]="{'is-invalid' : signupForm.controls['email'].errors && checkForm }" class="form-control" />
                         <div *ngIf="signupForm.controls['email'].errors && checkForm" class="text-danger">
                             <small *ngIf="signupForm.controls['email'].errors['required']">Insert your Email Id</small>
                             <small *ngIf="signupForm.controls['email'].errors['email']">Email Id is Not Correct</small>
+                            <small *ngIf="signupForm.controls['email'].errors['userErr']">Email Id is Already Exists</small>
                         </div>
                     </div>
                     <div class="form-group">

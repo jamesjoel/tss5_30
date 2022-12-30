@@ -25,6 +25,7 @@ import { ChangePasswordComponent } from './pages/change-password/change-password
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { OtpComponent } from './pages/otp/otp.component';
 import { NewPasswordComponent } from './pages/new-password/new-password.component';
+import { MyCartComponent } from './pages/my-cart/my-cart.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { NewPasswordComponent } from './pages/new-password/new-password.componen
     ChangePasswordComponent,
     ForgotPasswordComponent,
     OtpComponent,
-    NewPasswordComponent
+    NewPasswordComponent,
+    MyCartComponent
   ],
   imports: [
     CommonModule,

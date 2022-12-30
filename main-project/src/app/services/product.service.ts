@@ -27,4 +27,8 @@ export class ProductService {
   upateProduct(id:any, obj:any){
     return this._http.put<any>(this.apiUrl+id, obj);
   }
+
+  getProductByCartArr(obj:any){
+    return this._http.post<any>(this.apiUrl+"/productbycart", obj);
+  }
 }

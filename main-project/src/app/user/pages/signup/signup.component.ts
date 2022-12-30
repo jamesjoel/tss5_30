@@ -27,6 +27,7 @@ export class SignupComponent implements OnInit {
 
   allCity : any =[];
   allState : any = [];
+  username:any;
   constructor(
     private _city : CityService,
     private _fb : FormBuilder,
@@ -128,6 +129,21 @@ export class SignupComponent implements OnInit {
     this._city.getCityByState(this.signupForm.controls['state'].value).subscribe(result=>{
       this.allCity = result;
     })
+  }
+
+  checkUserName(){
+    // if(this.signupForm.valid){
+      // console.log(this.signupForm.controls['email'].value);
+    // }
+    let u = this.signupForm.controls['email'].value;
+    let obj = { user : u };
+    this._user.checkUserName(obj).subscribe(result=>{
+      if(result.size == 1){
+
+        this.signupForm.controls['email'].setErrors({ userErr : true });
+      }
+    })
+
   }
   
 
