@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFormik } from 'formik';
-import SignupSchema from '../../../schemas/SignupSchema';
+import SignupSchema from '../../../../schemas/SignupSchema';
 
 const user = {
     fullname : "",

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getData, deleteData } from '../../../services/StudentService';
+import { getData, deleteData } from '../../../../services/StudentService';
 
 const List = () => {
   let [allStu, setAllStu] = useState([]);

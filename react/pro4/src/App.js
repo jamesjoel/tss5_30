@@ -1,15 +1,9 @@
 import React from 'react'
-import UserRoutes from './routes/UserRoutes';
-import Header from './components/shared/Header/Header';
-import Footer from './components/shared/Footer/Footer';
+import AllRoutes from './AllRoutes/AllRoutes'
 const App = () => {
   return (
    <>
-    <Header />
-    <div className='container' style={{ minHeight : "600px"}}>
-      <UserRoutes />
-    </div>
-    <Footer />
+      <AllRoutes />
    </>
   )
 }

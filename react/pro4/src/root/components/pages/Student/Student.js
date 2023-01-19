@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { saveData, getDataById, updateData } from '../../../services/StudentService';
+import { saveData, getDataById, updateData } from '../../../../services/StudentService';
 let Student = ()=>{
     // let [fullName, setFullName] = useState("");
     // let [age, setAge] = useState("");

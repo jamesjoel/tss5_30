@@ -17,11 +17,6 @@ const UserRoutes = () => {
             <Route path='/student/edit/:id' element={<Student />} />
             <Route path='/student/list' element={<List />} />
             <Route path='/signup' element={<Signup />} />
-              
-            
-            
-
-            
         </Routes>
     </>
   )
