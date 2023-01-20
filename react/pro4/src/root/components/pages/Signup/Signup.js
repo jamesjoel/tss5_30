@@ -1,20 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import SignupSchema from '../../../../schemas/SignupSchema';
+import { saveData } from '../../../../services/UserService';
+import { useNavigate } from 'react-router-dom'
+import { AlertDanger } from '../../../../shared/Alerts/Alert';
 
 const user = {
     fullname : "",
     email : "",
     password : "",
-    re_pass : ""
+    re_pass : "",
+    contact : ""
 }
 
 const Signup = () => {
+    let navigate = useNavigate();
+    let [showAlert, setShowAlert] = useState(false);
+    let [showSpinner, setShowSpinner] = useState(false);
     let {values, handleSubmit, handleBlur, handleChange, errors, touched} =useFormik({
         initialValues : user,
         validationSchema : SignupSchema,
         onSubmit : ()=>{
-            console.log(values);
+            setShowSpinner(true);
+            // console.log(values);
+            saveData(values).then(result=>{
+                // console.log(result.data);
+                if(result.data.status == 200){
+                    navigate("/login");
+                }else{
+                    setShowAlert(true);
+                }
+                setShowSpinner(false);
+            }).catch(err=>{
+                //console.log('-----',err);
+                setShowAlert(true);
+                setShowSpinner(false);
+            })
         }
     });
   return (
@@ -25,21 +46,21 @@ const Signup = () => {
                 <h3>Registration</h3>
                 <div className="form-group">
                     <label>Full Name</label>
-                    <input onChange={handleChange} onBlur={handleBlur} name='fullname' type='text' className={'form-control '+ (errors.fullname && touched.fullname ? 'is-invalid':'')} />
+                    <input autoComplete='off' onChange={handleChange} onBlur={handleBlur} name='fullname' type='text' className={'form-control '+ (errors.fullname && touched.fullname ? 'is-invalid':'')} />
                     {
                         errors.fullname && touched.fullname ? (<ErrMsg msg = {errors.fullname} />) : null
                     }
                 </div>
                 <div className="form-group">
                     <label>Email</label>
-                    <input onChange={handleChange} onBlur={handleBlur} name='email' type='text' className={'form-control '+(errors.email && touched.email ? 'is-invalid' : '')} />
+                    <input autoComplete='off' onChange={handleChange} onBlur={handleBlur} name='email' type='text' className={'form-control '+(errors.email && touched.email ? 'is-invalid' : '')} />
                     {
                         errors.email && touched.email ? (<ErrMsg msg={errors.email} />) : null
                     }
                 </div>
                 <div className="form-group">
                     <label>Password</label>
-                    <input onChange={handleChange} onBlur={handleBlur} name='password' type='password' className={'form-control '+(errors.password && touched.password ? 'is-invalid' : '')} />
+                    <input autoComplete='off' onChange={handleChange} onBlur={handleBlur} name='password' type='password' className={'form-control '+(errors.password && touched.password ? 'is-invalid' : '')} />
                     {
                         errors.password && touched.password ? (<ErrMsg msg={errors.password} />) : null
                     }
@@ -47,15 +68,27 @@ const Signup = () => {
                 
                 <div className="form-group">
                     <label>Re-Password</label>
-                    <input onChange={handleChange} onBlur={handleBlur} name='re_pass' type='password' className={'form-control '+(errors.re_pass && touched.re_pass ? 'is-invalid' : '')} />
+                    <input autoComplete='off' onChange={handleChange} onBlur={handleBlur} name='re_pass' type='password' className={'form-control '+(errors.re_pass && touched.re_pass ? 'is-invalid' : '')} />
                     {
                         errors.re_pass && touched.re_pass ? (<ErrMsg msg={errors.re_pass} />) : null
                     }
                 </div>
+                <div className="form-group">
+                    <label>Contact</label>
+                    <input autoComplete='off' onChange={handleChange} onBlur={handleBlur} name='contact' type='text' className={'form-control '+(errors.contact && touched.contact ? 'is-invalid' : '')} />
+                    {
+                        errors.contact && touched.contact ? (<ErrMsg msg={errors.contact} />) : null
+                    }
+                </div>
                 
                 <br />
+                {
+                    showAlert ? (<AlertDanger msg="Somthing went wrong" />) : ''
+                }
+                
                 <br />
-                <input type='submit' value='Signup' className='btn btn-success' />
+                <button type='submit' className='btn btn-success' >Signup { showSpinner ? (<span className='spinner-border spinner-border-sm text-light'></span>) : '' }</button>
+
             </div>
         </div>
             </form>
