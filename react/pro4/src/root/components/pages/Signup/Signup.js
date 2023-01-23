@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import AllData from '../../../../hooks/CityHook';
 import { useFormik } from 'formik';
 import SignupSchema from '../../../../schemas/SignupSchema';
 import { saveData } from '../../../../services/UserService';
+
 import { useNavigate } from 'react-router-dom'
 import { AlertDanger } from '../../../../shared/Alerts/Alert';
 
@@ -10,10 +12,17 @@ const user = {
     email : "",
     password : "",
     re_pass : "",
-    contact : ""
+    contact : "",
+    city : ""
 }
 
 const Signup = () => {
+    // let [city, setCity] = useState([]);
+    let city = useContext(AllData);
+   
+
+    
+
     let navigate = useNavigate();
     let [showAlert, setShowAlert] = useState(false);
     let [showSpinner, setShowSpinner] = useState(false);
@@ -78,6 +87,18 @@ const Signup = () => {
                     <input autoComplete='off' onChange={handleChange} onBlur={handleBlur} name='contact' type='text' className={'form-control '+(errors.contact && touched.contact ? 'is-invalid' : '')} />
                     {
                         errors.contact && touched.contact ? (<ErrMsg msg={errors.contact} />) : null
+                    }
+                </div>
+                <div className="form-group">
+                    <label>City</label>
+                    <select name='city' onChange={handleChange} className={'form-control '+(errors.city && touched.city ? 'is-invalid' : '')} >
+                        <option value="">Select City</option>
+                        {
+                            city.map(obj=>(<option key={obj.id} value={obj.id}>{obj.name}</option>))
+                        }
+                    </select>
+                    {
+                        errors.city && touched.city ? (<ErrMsg msg={errors.city} />) : null
                     }
                 </div>
                 

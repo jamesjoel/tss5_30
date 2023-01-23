@@ -5,7 +5,8 @@ let SignupSchema = Y.object({
     email : Y.string().email("Email id is not correct").required("Insert Your Email Id"),
     password : Y.string().min(6, "Insert Min 6 Cha").required("Insert Your Password"),
     re_pass : Y.string().required("Insert Re-Password").oneOf([Y.ref('password'), null], "Re-Password not matched"),
-    contact : Y.number().required("Insert Your Contact Number")
+    contact : Y.number().required("Insert Your Contact Number"),
+    city : Y.string().required("select your city")
 })
 
 export default SignupSchema;
