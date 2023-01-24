@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import {useNavigate} from 'react-router-dom'
 import { doLogin } from '../../../../services/UserService'
 import { AlertDanger } from '../../../../shared/Alerts/Alert'
 
 const Login = () => {
 
+  let navigate = useNavigate();
   let [user, setUser] = useState({
     email : "",
     password : ""
@@ -14,7 +16,13 @@ const Login = () => {
 
   let submit = ()=>{
     doLogin(user).then(result=>{ 
-      console.log(result.data);
+      
+      if(result.data.success == true)
+      {
+        localStorage.setItem("token", result.data.token);
+        navigate("/profile");
+      }
+
       if(result.data.errType == 1){
         setShowAlert(true);
         setMsg("This Email and Password is incorrect");

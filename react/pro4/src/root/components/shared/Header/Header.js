@@ -1,7 +1,10 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { AuthService, ClearToken } from '../../../../services/AuthService';
 
 const Header = () => {
+    
+
   return (
     <>
      <div className="hero_area">
@@ -30,18 +33,11 @@ const Header = () => {
                 <li className="nav-item active">
                     <NavLink className="nav-link" to="/about">About</NavLink>
                 </li>
-                {/* <li className="nav-item active">
-                    <NavLink className="nav-link" to="/student">Student</NavLink>
-                </li>
-                <li className="nav-item active">
-                    <NavLink className="nav-link" to="/student/list">List</NavLink>
-                </li> */}
-                <li className="nav-item active">
-                    <NavLink className="nav-link" to="/signup">Signup</NavLink>
-                </li>
-                <li className="nav-item active">
-                    <NavLink className="nav-link" to="/login">Login</NavLink>
-                </li>
+                {
+                    AuthService() ? <AfterLogin /> : <BeforeLogin />
+                }
+                
+
                 
                 </ul>
                 <div className="user_option">
@@ -146,6 +142,43 @@ const Header = () => {
         </div>
     </>
   )
+}
+
+
+
+let BeforeLogin = ()=>{
+    return(
+        <>
+            <li className="nav-item active">
+                    <NavLink className="nav-link" to="/signup">Signup</NavLink>
+                </li>
+                <li className="nav-item active">
+                    <NavLink className="nav-link" to="/login">Login</NavLink>
+                </li>
+        </>
+    )
+}
+let AfterLogin = ()=>{
+    let navigate = useNavigate();
+
+    let Logout = ()=>{
+        console.log("*****************");
+        ClearToken();
+        navigate("/login");
+    }
+    return(
+        <>
+            <li className="nav-item active">
+                    <NavLink className="nav-link" to="/profile">Profile</NavLink>
+                </li>
+                <li className="nav-item active">
+                    <NavLink className="nav-link" to="/profile/changepassword">Change Password</NavLink>
+                </li>
+                <li className="nav-item active">
+                    <NavLink className="nav-link" onClick={Logout}>Logout</NavLink>
+                </li>
+        </>
+    )
 }
 
 export default Header
