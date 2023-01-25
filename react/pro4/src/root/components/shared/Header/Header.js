@@ -164,7 +164,7 @@ let AfterLogin = ()=>{
     let Logout = ()=>{
         console.log("*****************");
         ClearToken();
-        navigate("/login");
+        navigate("/");
     }
     return(
         <>
@@ -175,7 +175,7 @@ let AfterLogin = ()=>{
                     <NavLink className="nav-link" to="/profile/changepassword">Change Password</NavLink>
                 </li>
                 <li className="nav-item active">
-                    <NavLink className="nav-link" onClick={Logout}>Logout</NavLink>
+                    <button className="nav-link" onClick={Logout}>Logout</button>
                 </li>
         </>
     )
