@@ -3,15 +3,21 @@ import ReactDOM from 'react-dom/client';
 
 import App from './App';
 import { Provider } from 'react-redux';
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import userReducer from './redux/userReducer';
+import studentReducer from './redux/stuReducer'
+import productReducer from './redux/productReducer'
 import { BrowserRouter } from 'react-router-dom';
 
-
+const rootReducer = combineReducers({
+  userReducer,
+  studentReducer,
+  productReducer
+})
 
 const collection = configureStore({
   
-  reducer : userReducer
+  reducer : rootReducer
 });
 
 
