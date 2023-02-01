@@ -19,8 +19,8 @@ mongoose.connection.on("error", (err)=>{
 
 app.post("/api/save", (req, res)=>{
     // console.log(req.body);
-    User.create(req.body, (err)=>{
-        res.send({success : true});
+    User.create(req.body, (err, result)=>{
+        res.send(result);
     })
 })
 app.get("/api/get", async (req, res)=>{
@@ -35,8 +35,8 @@ app.get("/api/get", async (req, res)=>{
 
 app.delete("/api/delete/:id", async (req, res)=>{
     let id = req.params.id;
-    await User.deleteMany({_id:id});
-    res.send({succeses: true});
+    let result =await User.findOneAndDelete({_id:id});
+    res.send(result);
 })
 
 
